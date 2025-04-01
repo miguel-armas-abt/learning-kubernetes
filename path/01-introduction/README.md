@@ -4,7 +4,15 @@
 
 ----
 
-### Kubernetes (K8S)
+[1. Kubernetes](#kubernetes-k8s) <br>
+[2. Clúter y nodos](#clúster-y-nodos) <br>
+[3. Escalabilidad](#escalabilidad) <br>
+[4. Arquitectura K8s](#arquitectura-k8s) <br>
+[5. Tipos de instalaciones K8s](#tipos-de-instalación-de-para-un-clúster-de-k8s) <br>
+
+---
+
+### Kubernetes (K8s)
 Plataforma de orquestación de contenedores que permite automatizar el despliegue, la escalabilidad y la gestión de aplicaciones en contenedores a través de archivos de configuración yml.
 
 ---
@@ -13,6 +21,16 @@ Plataforma de orquestación de contenedores que permite automatizar el despliegu
 Nodo se refiere a un componente de hardware conectado a una red, capaz de realizar procesamiento de datos. Por otra parte, un clúster es un grupo de nodos que trabajan en conjunto para proporcionar mayor capacidad de procesamiento a una aplicación.
 
 <img src="./resources/cluster-and-nodes.jpeg" width="450" height="320">
+
+---
+
+### Minikube
+Minikube es una herramienta que permite ejecutar un clúster de K8s localmente.
+
+---
+
+### Kubectl
+Kubectl es la herramienta de línea de comandos utilizada para administrar clústeres de K8s.
 
 ---
 
@@ -37,7 +55,7 @@ Consiste en conectar más nodos sobre la misma red, que tengan las mismas caract
 
 ---
 
-### Arquitectura K8S
+### Arquitectura K8s
 Un clúster de kubernetes se compone de varios nodos, que se agrupan en <u>nodos master</u> y <u>nodos workers</u>. 
 Los nodos master controlan la infraestructura del cluster y por otra parte los nodos workers alojan a nuestras aplicaciones.
 
@@ -67,5 +85,19 @@ Garantiza que los contenedores dentro de los pods estén ejecutándose y en un e
 
 <img src="./resources/k8s-architecture.svg" width="600" height="600">
 
+---
 
+### Tipos de instalación de para un clúster de K8s
 
+Los clústers de K8s pueden ser On-Premise o gestionados por cloud providers, tales como:
+- Azure Kubernetes Service (AKS)
+- Amazon Elastic Kubernetes Service (EKS)
+- Google Kubernetes Engine (GKE). 
+
+Así mismo, los clústers de K8s debe ser configurados y desplegados de acuerdo a las necesidades del proyecto.
+
+| Tipo de intalación               | Descripción                                                                                                                   |  
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `All-in-One`                     | - Todos los objetos de K8s se ejecutan en un solo nodo. <br> - Es útil para fines de desarrollo, por ejemplo, con `Minikube`. |
+| `Single-Master and Multi-Worker` | Un nodo master gestiona varios nodos workers, lo que permite una mayor escalabilidad y redundancia.                           |
+| `Multi-Master and Multi-Worker`  | Varios nodos master gestionan varios nodos workers, lo que proporciona alta disponibilidad y redundancia.                     |

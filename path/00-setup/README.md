@@ -4,27 +4,34 @@
 
 ----
 
-> ### ⚙️ Instalar Docker Desktop (Windows)
+> ### ⚙️ Instalar Kubectl y Minikube
 > Referencias:
->   - [Instalar WSL2 y Docker](https://youtu.be/OGtLAMUyDrc?si=CPrSn975qjKHZISX)
->   - [Activar virtualización en la BIOS](https://youtu.be/FJIOvB4Jy0w?si=JW5HP5eaaFchWF2y)
-> 
+>   - [Instalar Kubectl y Minikube](https://youtu.be/hPlioIpgTuQ?si=VHKb_K0cKTd_-4aK)
 
-> ### ⚙️ Asignar recursos a Docker Desktop
-> Cree un archivo `.wslconfig` en la ruta `C:\Users\<username>\`, añada el siguiente contenido según los recursos de su computadora y reinicie Docker Desktop.
-> ```javascript
-> [wsl2]
-> memory=3072MB
-> processors=5
+> ### ▶️ Mostrar información del clúster
+> ```shell script 
+> kubectl cluster-info            # mostrar información del clúster
+> kubectl config view             # mostrar configuración del clúster
+> kubectl get nodes               # mostrar nodos
+> kubectl kubectl api-versions    # mostrar versión del API Server
 > ```
+----
 
-> ### ▶️ Mostrar información de Docker
-> ```shell script
-> docker info
+> ### ▶️ Gestión de contextos
+> ```shell script 
+> kubectl config current-context            # mostrar contexto actual
+> kubectl config get-contexts               # mostrar contextos
+> kubectl config use-context <context-name> # cambiar de contexto
 > ```
+> Ejemplos:<br>
+> - `kubectl config use-context minikube`
+> - `kubectl config use-context askeu2008pocdev02`
 
-> ### ▶️ Eliminar todos los recursos sin utilizar (imágenes, contenedores, volúmenes y redes)
-> - Utilice `--all`para especificar a todos los recursos, incluyendo los que están actualmente en uso
+---
+
+> ### ▶️ **Gestión de namespaces**
 > ```shell script
-> docker system prune --all
+> kubectl create namespace <namespace>
+> kubectl delete namespace <namespace>
+> kubectl get events -n <namespace>     # mostrar eventos en un namespace
 > ```
