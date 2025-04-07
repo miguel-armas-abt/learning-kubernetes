@@ -18,10 +18,10 @@
 
 
 > ### ▶️ Mostrar objetos
-> - Utilice `--all-namespaces` para mostrar los objetos de todos los namespaces
+> - Utilice `-A` equivalente a `--all-namespaces` para mostrar los objetos de todos los namespaces
 > - Utilice `-o yaml` para formatear la respuesta
 > ```shell script 
-> kubectl get all -n <namespace>
+> kubectl get all -n <namespace> # mostrar todos los objetos
 > kubectl get <k8s-object> -n <namespace>
 > ```
 ----
