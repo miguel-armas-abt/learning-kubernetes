@@ -75,7 +75,7 @@
 > - **Historial**: Mostrar el historial de revisiones
 > - **Rollback**: Revertir el deployment a una revisión anterior
 > - **Estado**: Mostrar el estado de un despliegue en curso
-> - **Reinio**: Reiniciar el deployment
+> - **Reinio**: Reiniciar el deployment (útil cuando se actualizan secretos)
 > ```shell script 
 > kubectl rollout history deployment/<deployment-id>
 > kubectl rollout undo deployment/<deployment-id> --to-revision=<revision-number>
