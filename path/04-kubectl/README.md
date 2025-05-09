@@ -20,6 +20,7 @@
 > ### ▶️ Mostrar objetos
 > - Utilice `-A` equivalente a `--all-namespaces` para mostrar los objetos de todos los namespaces
 > - Utilice `-o yaml` para formatear la respuesta
+> - Utilice `-w` equivalente a `watch` para mostrar en tiempo real el estado de los objetos
 > ```shell script 
 > kubectl get all -n <namespace> # mostrar todos los objetos
 > kubectl get <k8s-object> -n <namespace>
@@ -65,9 +66,11 @@
 > - `kubectl delete -f ./deployment.yml`
 ----
 
-> ### ▶️ Escalar deployments
+> ### ▶️ Editar deployment
+> - Permite modificar el manifiesto del deployment y aplicar los cambios <u>en caliente</u>.
+> - Útil para probar de inmediato una versión diferente de la imagen.
 > ```shell script 
-> kubectl scale deployment <deployment-id> --replicas=3
+> kubectl edit deployment <deployment-id>
 > ```
 ----
 
@@ -76,11 +79,13 @@
 > - **Rollback**: Revertir el deployment a una revisión anterior
 > - **Estado**: Mostrar el estado de un despliegue en curso
 > - **Reinio**: Reiniciar el deployment (útil cuando se actualizan secretos)
+> - **Escalado**: Escalar el deployment a N réplicas
 > ```shell script 
 > kubectl rollout history deployment/<deployment-id>
 > kubectl rollout undo deployment/<deployment-id> --to-revision=<revision-number>
 > kubectl rollout status deployment/<deployment-id>
 > kubectl rollout restart deployment/<deployment-id>
+> kubectl scale deployment/<deployment-id> --replicas=3
 > ```
 ----
 
