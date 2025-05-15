@@ -44,11 +44,22 @@
 > ### ▶️ Ingresar al sistema de archivos del contenedor asociado a un pod
 > - Cambie al tipo de terminal instalada en los contenedores (`bash`, `sh`)
 > ```shell script 
-> kubectl exec -it <pod-id> -- bash -n <namespace>
+> kubectl exec -it <pod-id> -n <namespace> -- bash
 > ```
 ----
 
-> ### ▶️ Describir / Eliminar objetos
+> ### ▶️ Modificar objetos
+> - `edit` permite abrir un editor de texto para inspeccionar el manifiesto completo y efectuar cambios donde corresponda. K8s reemplaza el manifiesto entero.
+> - `patch` permite actualizar solo los cambios que se especifiquen.
+>
+> ```shell script 
+> kubectl edit <k8s-object> <k8-object-id> -n <namespace>
+> kubectl patch <k8s-object> <k8s-object-id> -n <namespace> --patch '$(cat k8s-manifest.yaml)'
+> ```
+----
+
+> ### ▶️ Describir / Eliminar / Modificar objetos
+>  
 > ```shell script 
 > kubectl delete <k8s-object> <k8s-object-id> -n <namespace>
 > kubectl describe <k8s-object> <k8s-object-id> -n <namespace>
@@ -64,14 +75,6 @@
 > Ejemplos: <br>
 > - `kubectl apply -f ./`
 > - `kubectl delete -f ./deployment.yml`
-----
-
-> ### ▶️ Editar deployment
-> - Permite modificar el manifiesto del deployment y aplicar los cambios <u>en caliente</u>.
-> - Útil para probar de inmediato una versión diferente de la imagen.
-> ```shell script 
-> kubectl edit deployment <deployment-id>
-> ```
 ----
 
 > ### ▶️ Gestionar deployment
