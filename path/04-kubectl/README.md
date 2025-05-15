@@ -4,18 +4,19 @@
 
 ----
 
-| k8s-object        | Objeto                    |
-|-------------------|---------------------------|
-| `pods`            | Pod                       |
-| `service`         | Service                   |
-| `deployment`      | Deployment                |
-| `secret`          | Secret                    |
-| `cm`              | Config Map                |
-| `pv`              | Persistent Volume         |
-| `pvc`             | Persistent Volume Claim   |
-| `hpa`             | Horizontal Pod Autoscaler |
-| `serviceaccounts` | Service Accounts          |
+### 📌K8S objects 
 
+- `pods`: Pod
+- `service`: Service
+- `deployment`: Deployment
+- `secret`: Secret
+- `cm`: Config Map
+- `pv`: Persistent Volume
+- `pvc`: Persistent Volume Claim
+- `hpa`: Horizontal Pod Autoscaler
+- `serviceaccounts`: Service Accounts
+
+---
 
 > ### ▶️ Mostrar objetos
 > - Utilice `-A` equivalente a `--all-namespaces` para mostrar los objetos de todos los namespaces
