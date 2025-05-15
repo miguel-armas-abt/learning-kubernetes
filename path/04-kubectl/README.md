@@ -6,7 +6,7 @@
 
 ### 📌K8S objects 
 
-- `pods`: Pod
+- `pod`: Pod
 - `service`: Service
 - `deployment`: Deployment
 - `secret`: Secret
