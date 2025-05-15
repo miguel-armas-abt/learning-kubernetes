@@ -48,6 +48,17 @@
 > ```
 ----
 
+> ### ▶️ Aplicar / Eliminar manifiestos
+> - Utilice `-f` para indicar el directorio o nombre de los manifiestos
+> ```shell script 
+> kubectl apply -f <directory-name> -n <namespace>
+> kubectl delete -f <directory-name> -n <namespace>
+> ```
+> Ejemplos: <br>
+> - `kubectl apply -f ./`
+> - `kubectl delete -f ./deployment.yml`
+----
+
 > ### ▶️ Modificar objetos
 > - `edit` permite abrir un editor de texto para inspeccionar el manifiesto completo y efectuar cambios donde corresponda. K8s reemplaza el manifiesto entero.
 > - `patch` permite actualizar solo los cambios que se especifiquen.
@@ -58,23 +69,12 @@
 > ```
 ----
 
-> ### ▶️ Describir / Eliminar / Modificar objetos
+> ### ▶️ Describir / Eliminar objetos
 >  
-> ```shell script 
-> kubectl delete <k8s-object> <k8s-object-id> -n <namespace>
+> ```shell script
 > kubectl describe <k8s-object> <k8s-object-id> -n <namespace>
+> kubectl delete <k8s-object> <k8s-object-id> -n <namespace>
 > ```
-----
-
-> ### ▶️ Aplicar / Eliminar manifiestos
-> - Utilice `-f` para indicar el directorio o nombre de los manifiestos
-> ```shell script 
-> kubectl apply -f <directory-name> -n <namespace>
-> kubectl delete -f <directory-name> -n <namespace>
-> ```
-> Ejemplos: <br>
-> - `kubectl apply -f ./`
-> - `kubectl delete -f ./deployment.yml`
 ----
 
 > ### ▶️ Gestionar deployment
